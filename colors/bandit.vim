@@ -26,6 +26,10 @@ let ColourAssignment['Comment']         = {"GUIFG": '#00ff00',     "CTERMFG": 'G
 " of green: this also allows the doxygen todo error highlighter to be able to spot
 " erroneous @todo flags in non-doxygen comments (requires Doxygen Comment Matcher)
 let ColourAssignment['DoxygenComment']  = {"GUIFG": '#008800',     "CTERMFG": 'Green',     "TERM":  'Bold'}
+let ColourAssignment['DoxygenKeyword']  = {"GUIFG": '#88ffdd',     "CTERMFG": 'Blue'}
+let ColourAssignment['DoxygenLink']     = {"GUIFG": '#8888ff',     "CTERMFG": 'Blue'}
+let ColourAssignment['DoxygenTable']    = {"GUIFG": '#00bb00',     "CTERMFG": 'Green',     "TERM":  'Bold'}
+let ColourAssignment['DoxygenTableLines']  = {"GUIFG": '#88ffdd',     "CTERMFG": 'Blue'}
 
 " These are PC-Lint related comments
 let ColourAssignment['LintComment']     = {"GUIFG": '#00ff88',     "CTERMFG": 'Green',     "TERM":  'Bold'}
@@ -85,6 +89,16 @@ let ColourAssignment['FoldColumn']      = {"GUIFG": 'DarkBlue',    "GUIBG":   'G
 
 " Popup Menu
 let ColourAssignment['Pmenu']           = {"GUIFG": '#442206',     "GUIBG": '#ffff77',     "CTERMFG": "Black",   "CTERMBG": "Yellow"}
+
+" Line Numbering
+let ColourAssignment['LineNr']          = {"GUIFG": 'Purple',      "GUIBG": 'LightGrey'}
+
+" Status Lines
+let ColourAssignment['StatusLine']      = {"GUIFG": 'Black',       "GUIBG": 'LightGrey',   "GUI": "Bold"}
+let ColourAssignment['StatusLineNC']    = {"GUIFG": 'Black',       "GUIBG": 'DarkGrey',    "GUI": "Bold"}
+
+" Vertical Splits
+let ColourAssignment['VertSplit']       = {"GUIFG": 'Black',       "GUIBG": "DarkGrey",    "GUI": "Bold"}
 
 
 " Delimiters
@@ -159,6 +173,9 @@ if &background == 'light'
 	let ColourAssignment['String']["CTERMFG"] = 'DarkYellow'
 	let ColourAssignment['Union']["GUIFG"]    = 'DarkGrey'
 	let ColourAssignment['Identifier']["GUIFG"] = 'Blue'
+	let ColourAssignment['LineNr']["GUIBG"]   = 'Grey'
+	let ColourAssignment['StatusLine']["GUIBG"] = 'Black'
+	let ColourAssignment['StatusLine']["GUIFG"] = 'White'
 endif
 
 hi Ignore ctermfg=DarkGrey guifg=grey20
