@@ -98,7 +98,10 @@ let ColourAssignment['StatusLine']      = {"GUIFG": 'Black',       "GUIBG": 'Lig
 let ColourAssignment['StatusLineNC']    = {"GUIFG": 'Black',       "GUIBG": 'DarkGrey',    "GUI": "Bold"}
 
 " Vertical Splits
-let ColourAssignment['VertSplit']       = {"GUIFG": 'Black',       "GUIBG": "DarkGrey",    "GUI": "Bold"}
+let ColourAssignment['VertSplit']       = {"GUIFG": 'Black',       "GUIBG": "White",       "GUI": "Bold"}
+
+" Signs Column
+let ColourAssignment['SignColumn']      = {"GUIBG": '#222222'}
 
 
 " Delimiters
@@ -176,6 +179,7 @@ if &background == 'light'
 	let ColourAssignment['LineNr']["GUIBG"]   = 'Grey'
 	let ColourAssignment['StatusLine']["GUIBG"] = 'Black'
 	let ColourAssignment['StatusLine']["GUIFG"] = 'White'
+	let ColourAssignment['SignColumn']["GUIBG"] = "LightGrey"
 endif
 
 hi Ignore ctermfg=DarkGrey guifg=grey20
