@@ -53,6 +53,9 @@ let ColourAssignment['Repeat']          = {"GUIFG": '#8888FF'} " for, do, while,
 let ColourAssignment['Label']           = {"GUIFG": '#2222FF'} " case, default, etc.
 let ColourAssignment['Exception']       = {"GUIFG": '#5555AA'} " try, catch, throw
 
+" Operators (+, =, -, % etc): not defined by default C syntax
+let ColourAssignment['Operator']        = {"GUIFG": '#CCCCFF'}
+
 " Identifiers are shades of Cyan
 let ColourAssignment['Identifier']      = {"GUIFG": 'Cyan',        "TERM":    'Underline'}
 let ColourAssignment['Function']        = {"GUIFG": '#007777',     "CTERMFG": 'Cyan'}
@@ -170,13 +173,14 @@ if &background == 'light'
 	endfor
 
 	" Now add manual alterations
-	let ColourAssignment['Normal']            = {"GUIFG": 'Black',     "GUIBG": 'White'}
-	let ColourAssignment['Comment']["GUIFG"]  = 'DarkGreen'
-	let ColourAssignment['String']["GUIFG"]   = '#663300'
-	let ColourAssignment['String']["CTERMFG"] = 'DarkYellow'
-	let ColourAssignment['Union']["GUIFG"]    = 'DarkGrey'
+	let ColourAssignment['Normal']              = {"GUIFG": 'Black',     "GUIBG": 'White'}
+	let ColourAssignment['Comment']["GUIFG"]    = 'DarkGreen'
+	let ColourAssignment['String']["GUIFG"]     = '#663300'
+	let ColourAssignment['String']["CTERMFG"]   = 'DarkYellow'
+	let ColourAssignment['Union']["GUIFG"]      = 'DarkGrey'
 	let ColourAssignment['Identifier']["GUIFG"] = 'Blue'
-	let ColourAssignment['LineNr']["GUIBG"]   = 'Grey'
+	let ColourAssignment['Operator']["GUIFG"]   = '#222288'
+	let ColourAssignment['LineNr']["GUIBG"]     = 'Grey'
 	let ColourAssignment['StatusLine']["GUIBG"] = 'Black'
 	let ColourAssignment['StatusLine']["GUIFG"] = 'White'
 	let ColourAssignment['SignColumn']["GUIBG"] = "LightGrey"
@@ -257,7 +261,6 @@ hi! link Question       Comment
 hi  link Number         Constant
 hi  link Boolean        Number
 hi  link Float          Number
-hi  link Operator       Statement
 hi  link Keyword        Statement
 hi  link Typedef        Type
 hi  link SpecialComment Special
