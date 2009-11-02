@@ -61,10 +61,10 @@ let ColourAssignment['Identifier']      = {"GUIFG": 'Cyan',        "TERM":    'U
 let ColourAssignment['Function']        = {"GUIFG": '#007777',     "CTERMFG": 'Cyan'}
 
 " Special additions created by mktypes.py are shades of Purple or Grey
-let ColourAssignment['ClassName']       = {"GUIFG": 'Purple',      "GUI":     'Bold',      "TERM":  'Underline'}
+let ColourAssignment['ClassName']       = {"GUIFG": 'Purple',      "TERM":  'Underline'}
 let ColourAssignment['DefinedName']     = {"GUIFG": '#ee82ee',     "TERM":    'Underline'}
 let ColourAssignment['Enumerator']      = {"GUIFG": '#c000c0'}
-let ColourAssignment['EnumerationName'] = {"GUIFG": '#c000c0',     "GUI":     'Bold',      "TERM":  'Underline'}
+let ColourAssignment['EnumerationName'] = {"GUIFG": '#ff22ff',     "TERM":  'Underline'}
 let ColourAssignment['Member']          = {"GUIFG": 'DarkGrey',    "TERM":    'Underline'}
 let ColourAssignment['Union']           = {"GUIFG": 'Grey',        "TERM":    'Underline'}
 let ColourAssignment['GlobalVariable']  = {"GUIFG": '#666600',     "CTERMFG": 'Cyan',      "TERM":  'Underline'}
@@ -79,7 +79,7 @@ let ColourAssignment['Structure']       = {"GUIFG": '#ff8080'} " struct, union, 
 " Special Stuff
 let ColourAssignment['Special']         = {"GUIFG": 'Red',         "TERM":    'Bold'}
 let ColourAssignment['SpecialChar']     = {"GUIFG": '#AA0000'}     " special character in a constant
-let ColourAssignment['MatchParen']      = {"GUI":   'Underline,Bold', "GUIFG": "Yellow"}   " Highlighting of matching parentheses
+let ColourAssignment['MatchParen']      = {"GUI":   'Underline',   "GUIFG": "Yellow"}   " Highlighting of matching parentheses
 
 " Errors
 let ColourAssignment['Error']           = {"GUIFG": 'White',       "GUIBG":   'Red',       "TERM":  'Reverse'}
@@ -97,11 +97,11 @@ let ColourAssignment['Pmenu']           = {"GUIFG": '#442206',     "GUIBG": '#ff
 let ColourAssignment['LineNr']          = {"GUIFG": 'Purple',      "GUIBG": 'LightGrey'}
 
 " Status Lines
-let ColourAssignment['StatusLine']      = {"GUIFG": 'Black',       "GUIBG": 'LightGrey',   "GUI": "Bold"}
-let ColourAssignment['StatusLineNC']    = {"GUIFG": 'Black',       "GUIBG": 'DarkGrey',    "GUI": "Bold"}
+let ColourAssignment['StatusLine']      = {"GUIFG": 'Black',       "GUIBG": 'LightGrey'}
+let ColourAssignment['StatusLineNC']    = {"GUIFG": 'Black',       "GUIBG": 'DarkGrey'}
 
 " Vertical Splits
-let ColourAssignment['VertSplit']       = {"GUIFG": 'Black',       "GUIBG": "White",       "GUI": "Bold"}
+let ColourAssignment['VertSplit']       = {"GUIFG": 'Black',       "GUIBG": "White"}
 
 " Signs Column
 let ColourAssignment['SignColumn']      = {"GUIBG": '#222222'}
@@ -251,7 +251,10 @@ for key in keys(ColourAssignment)
 	else
 		let guisp='NONE'
 	endif
-	execute "hi ".key." term=".term." cterm=".cterm." gui=".gui." ctermfg=".ctermfg." guifg=".guifg." ctermbg=".ctermbg." guibg=".guibg." guisp=".guisp
+
+	if key =~ '^\k*$'
+		execute "hi ".key." term=".term." cterm=".cterm." gui=".gui." ctermfg=".ctermfg." guifg=".guifg." ctermbg=".ctermbg." guibg=".guibg." guisp=".guisp
+	endif
 endfor
 
 hi! link MoreMsg        Comment

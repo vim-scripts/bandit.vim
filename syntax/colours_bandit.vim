@@ -18,7 +18,9 @@ endfor
 syn clear vimVar
 
 for keyword in keywords
-	execute 'syn match '.keyword." /ColourAssignment\\['".keyword."'\\]/me=s+16"
+	if keyword =~ '^\k*$'
+		execute 'syn match '.keyword." /ColourAssignment\\['".keyword."'\\]/me=s+16"
+	endif
 endfor
 
 
