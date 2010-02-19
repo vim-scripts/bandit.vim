@@ -63,7 +63,7 @@ let ColourAssignment['Function']        = {"GUIFG": '#007777',     "CTERMFG": 'C
 " Special additions created by mktypes.py are shades of Purple or Grey
 let ColourAssignment['ClassName']       = {"GUIFG": 'Purple',      "TERM":  'Underline'}
 let ColourAssignment['DefinedName']     = {"GUIFG": '#ee82ee',     "TERM":    'Underline'}
-let ColourAssignment['Enumerator']      = {"GUIFG": '#c000c0'}
+let ColourAssignment['EnumerationValue']= {"GUIFG": '#c000c0'}
 let ColourAssignment['EnumerationName'] = {"GUIFG": '#ff22ff',     "TERM":  'Underline'}
 let ColourAssignment['Member']          = {"GUIFG": 'DarkGrey',    "TERM":    'Underline'}
 let ColourAssignment['Union']           = {"GUIFG": 'Grey',        "TERM":    'Underline'}
@@ -79,10 +79,13 @@ let ColourAssignment['Structure']       = {"GUIFG": '#ff8080'} " struct, union, 
 " Special Stuff
 let ColourAssignment['Special']         = {"GUIFG": 'Red',         "TERM":    'Bold'}
 let ColourAssignment['SpecialChar']     = {"GUIFG": '#AA0000'}     " special character in a constant
+let ColourAssignment['SpecialKey']      = {"GUIFG": '#555555'}     " special highlighting for 'listchars' etc
+let ColourAssignment['NonText']         = {"GUIFG": '#555555'}     " special highlighting for 'listchars' etc
 let ColourAssignment['MatchParen']      = {"GUI":   'Underline',   "GUIFG": "Yellow"}   " Highlighting of matching parentheses
 
 " Errors
 let ColourAssignment['Error']           = {"GUIFG": 'White',       "GUIBG":   'Red',       "TERM":  'Reverse'}
+let ColourAssignment['NonIndentTabError']={"GUISP": '#FFAA00',     "GUI":   'undercurl',   "CTERMBG": 'Red'}
 
 " Stuff needing doing
 let ColourAssignment['Todo']            = {"GUIFG": 'Blue',        "GUIBG":   'Yellow',    "TERM":  'Standout'}
@@ -105,6 +108,15 @@ let ColourAssignment['VertSplit']       = {"GUIFG": 'Black',       "GUIBG": "Whi
 
 " Signs Column
 let ColourAssignment['SignColumn']      = {"GUIBG": '#222222'}
+
+" Text Titles
+let ColourAssignment['Title']           = {"GUIFG": 'Blue',        "GUI": "Bold"}
+let ColourAssignment['htmlH1']          = {"GUIFG": 'Blue'}
+let ColourAssignment['htmlH2']          = {"GUIFG": '#8888FF'}
+let ColourAssignment['htmlH3']          = {"GUIFG": '#9999DD'}
+let ColourAssignment['htmlH4']          = {"GUIFG": '#5555AA'}
+let ColourAssignment['htmlH5']          = {"GUIFG": '#8888AA'}
+let ColourAssignment['htmlH6']          = {"GUIFG": '#888888'}
 
 
 " Delimiters
@@ -184,6 +196,8 @@ if &background == 'light'
 	let ColourAssignment['StatusLine']["GUIBG"] = 'Black'
 	let ColourAssignment['StatusLine']["GUIFG"] = 'White'
 	let ColourAssignment['SignColumn']["GUIBG"] = "LightGrey"
+	let ColourAssignment['SpecialKey']["GUIFG"] = '#AAAAAA'
+	let ColourAssignment['NonText']["GUIFG"]    = '#AAAAAA'
 endif
 
 hi Ignore ctermfg=DarkGrey guifg=grey20
@@ -268,3 +282,19 @@ hi  link Keyword        Statement
 hi  link Typedef        Type
 hi  link SpecialComment Special
 hi  link Debug          Special
+
+" For reference, roughly equivalent syntax highlighting in diffuse
+" (http://diffuse.sourceforge.net)
+" This is for C++ syntax:
+"
+" # colours
+" colour c++_comment 0.0 0.5 0.0
+" colour c++_fixme 0.5 0.5 0.0
+" colour c++_keyword 0.2 0.2 0.7
+" colour c++_type 0.7 0.3 0.0
+" colour c++_cpp 0.0 0.0 0.0
+" colour c++_cppkeyword 0.4 0.4 0.7
+" colour c++_literal 0.7 0.7 0.3
+" colour c++_string 0.4 0.2 0.0
+" colour c++_escapedchar 0.7 0.0 0.0
+" colour c++_punctuation 0.1 0.1 0.5
