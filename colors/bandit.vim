@@ -61,7 +61,7 @@ let ColourAssignment['Identifier']      = {"GUIFG": 'Cyan',        "TERM":    'U
 let ColourAssignment['Function']        = {"GUIFG": '#007777',     "CTERMFG": 'Cyan'}
 
 " Special additions created by mktypes.py are shades of Purple or Grey
-let ColourAssignment['ClassName']       = {"GUIFG": 'Purple',      "TERM":  'Underline'}
+let ColourAssignment['Class']           = {"GUIFG": 'Purple',      "TERM":  'Underline'}
 let ColourAssignment['DefinedName']     = {"GUIFG": '#ee82ee',     "TERM":    'Underline'}
 let ColourAssignment['EnumerationValue']= {"GUIFG": '#c000c0'}
 let ColourAssignment['EnumerationName'] = {"GUIFG": '#ff22ff',     "TERM":  'Underline'}
