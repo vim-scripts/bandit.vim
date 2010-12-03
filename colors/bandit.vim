@@ -59,6 +59,7 @@ let ColourAssignment['Operator']        = {"GUIFG": '#CCCCFF'}
 " Identifiers are shades of Cyan
 let ColourAssignment['Identifier']      = {"GUIFG": 'Cyan',        "TERM":    'Underline'}
 let ColourAssignment['Function']        = {"GUIFG": '#007777',     "CTERMFG": 'Cyan'}
+let ColourAssignment['Method']          = {"GUIFG": '#009966',     "CTERMFG": 'Cyan'}
 
 " Special additions created by mktypes.py are shades of Purple or Grey
 let ColourAssignment['Class']           = {"GUIFG": 'Purple',      "TERM":  'Underline'}
@@ -282,6 +283,10 @@ hi  link Keyword        Statement
 hi  link Typedef        Type
 hi  link SpecialComment Special
 hi  link Debug          Special
+
+hi link javaParen  hlLevel0
+hi link javaParen1 hlLevel1
+hi link javaParen2 hlLevel2
 
 " For reference, roughly equivalent syntax highlighting in diffuse
 " (http://diffuse.sourceforge.net)
